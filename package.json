@@ -23,7 +23,10 @@
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.2",
     "@nuxtjs/tailwindcss": "^6.10.3",
+    "autoprefixer": "^10.4.16",
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1"
+    "postcss": "^8.4.32",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.4.0"
   }
 }
