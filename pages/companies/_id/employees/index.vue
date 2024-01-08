@@ -45,7 +45,7 @@
               <div class="text-xl font-medium text-dark">Statistics</div>
               <p class="text-grey">Your team powers</p>
             </div>
-            <NuxtLink :to="{ name: 'employees-create' }"
+            <NuxtLink :to="{ name: 'companies-id-employees-create' }"
                       class="btn btn-primary">Add Employee</NuxtLink>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default {
     this.employees = await this.$axios.get('/employee', {
       params: {
         company_id: this.$route.params.id,
-        limit: 100,
+        limit: 1000,
       },
     })
   },

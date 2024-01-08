@@ -1,30 +1,38 @@
 <template>
   <div>
     <section class="py-[50px] flex flex-col items-center justify-center px-4">
-      <img src="/assets/svgs/logo-type.svg" alt="" />
+      <img src="/assets/svgs/logo-type.svg"
+           alt="" />
       <div class="text-[32px] font-semibold text-dark mt-[70px]">Sign Up</div>
       <p class="mt-4 text-base leading-7 text-center mb-[50px] text-grey">
         Manage your employees to achieve <br />
         a bigger goals for your company
       </p>
-      <form class="w-full card" @submit.prevent="userRegister">
+      <form class="w-full card"
+            @submit.prevent="userRegister">
         <div class="form-group">
-          <label for="" class="text-grey">Name</label>
-          <input type="text" class="input-field" v-model="register.name" />
+          <label for=""
+                 class="text-grey">Name</label>
+          <input type="text"
+                 class="input-field"
+                 v-model="register.name" />
         </div>
         <div class="form-group">
-          <label for="" class="text-grey">Email Address</label>
-          <input type="email" class="input-field" v-model="register.email" />
+          <label for=""
+                 class="text-grey">Email Address</label>
+          <input type="email"
+                 class="input-field"
+                 v-model="register.email" />
         </div>
         <div class="form-group">
-          <label for="" class="text-grey">Password</label>
-          <input
-            type="password"
-            class="input-field"
-            v-model="register.password"
-          />
+          <label for=""
+                 class="text-grey">Password</label>
+          <input type="password"
+                 class="input-field"
+                 v-model="register.password" />
         </div>
-        <button type="submit" class="w-full btn btn-primary mt-[14px]">
+        <button type="submit"
+                class="w-full btn btn-primary mt-[14px]">
           Continue
         </button>
       </form>
