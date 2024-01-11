@@ -44,6 +44,16 @@
                  :value="age"
                  @input="updateAge" />
         </div>
+        <div class="form-group">
+          <label for=""
+                 class="text-grey">Photo</label>
+          <input outlined
+                 accept="image/*"
+                 type="file"
+                 id="photo"
+                 @change="updatePhoto" />
+        </div>
+
         <NuxtLink :to="{ name: 'companies-id-employees-finish' }"
                   class="w-full btn btn-primary mt-[14px]">
           Continue
@@ -69,6 +79,9 @@ export default {
     age() {
       return this.$store.state.employee.age
     },
+    photo() {
+      return this.$store.state.employee.photo;
+    },
   },
   methods: {
     updateName(event) {
@@ -83,6 +96,12 @@ export default {
     updateAge(event) {
       this.$store.commit('employee/updateAge', event.target.value)
     },
-  }
+    updatePhoto(event) {
+      const file = event.target.files[0];
+      this.$store.commit('employee/updatePhoto', file);
+    },
+
+  },
+
 }
 </script>

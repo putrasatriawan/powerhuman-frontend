@@ -103,7 +103,7 @@
             <a href="
                #"
                class="absolute inset-0 focus:ring-2 ring-primary rounded-[26px]"></a>
-            <img :src="employee.photo"
+            <img :src="`${baseUrl}/${employee.photo}`"
                  class="rounded-full"
                  width="70"
                  alt="" />
@@ -137,6 +137,7 @@ export default {
   middleware: 'auth',
   data() {
     return {
+      baseUrl: 'http://127.0.0.1:8000/storage/photos',
       employees: [],
     }
   },

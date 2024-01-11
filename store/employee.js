@@ -35,6 +35,13 @@ export const mutations = {
   updateRoleName(state, payload) {
     state.role_name = payload
   },
+  updatePhoto(state, photoDataUrl) {
+    state.photo = photoDataUrl
+  },
 }
 
-export const actions = {}
+export const actions = {
+  updatePhoto({ commit }, photoDataUrl) {
+    commit('updatePhoto', photoDataUrl)
+  },
+}

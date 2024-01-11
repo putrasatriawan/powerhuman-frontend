@@ -93,20 +93,27 @@ export default {
     },
     async createEmployee() {
       try {
-        // mengirim registrasi data ke response
-        let response = await this.$axios.post('/employee', {
-          'name': this.$store.state.employee.name,
-          'email': this.$store.state.employee.email,
-          'gender': this.$store.state.employee.gender,
-          'age': this.$store.state.employee.age,
-          'phone': this.$store.state.employee.phone,
-          'team_id': this.$store.state.employee.team_id,
-          'role_id': this.$store.state.employee.role_id,
-        })
+        const formData = new FormData();
+        const state = this.$store.state.employee;
 
+        formData.append('name', state.name);
+        formData.append('photo', state.photo);
+        formData.append('email', state.email);
+        formData.append('gender', state.gender);
+        formData.append('age', state.age);
+        formData.append('phone', state.phone);
+        formData.append('team_id', state.team_id);
+        formData.append('role_id', state.role_id);
+
+        let response = await this.$axios.post('/employee', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
         // console.log(response)
         //menghapus state karena udah di submit
         this.$store.commit('employee/updateName', '')
+        this.$store.commit('employee/updatePhoto', '')
         this.$store.commit('employee/updateEmail', '')
         this.$store.commit('employee/updateGender', '')
         this.$store.commit('employee/updateAge', '')
