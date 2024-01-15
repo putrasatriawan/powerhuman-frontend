@@ -45,7 +45,7 @@
               <div class="text-xl font-medium text-dark">Available</div>
               <p class="text-grey">Empower company</p>
             </div>
-            <NuxtLink :to="{ name: 'teams-create' }"
+            <NuxtLink :to="{ name: 'companies-id-roles-create' }"
                       class="btn btn-primary">New Role</NuxtLink>
           </div>
         </div>
